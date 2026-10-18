@@ -1,0 +1,873 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BrasaTec Construção | Construção, Reformas e Acabamentos</title>
+    <meta name="description" content="BrasaTec Construção em Indaiatuba e região. Construção residencial, reformas e acabamentos. Solicite seu orçamento pelo WhatsApp.">
+    <meta name="theme-color" content="#111827">
+
+    <style>
+        :root {
+            --fundo: #111827;
+            --painel: #1f2937;
+            --azul: #00aaff;
+            --amarelo: #f5b301;
+            --texto: #f9fafb;
+            --texto-suave: #cbd5e1;
+            --borda: #374151;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
+
+        /* CABEÇALHO */
+
+        .cabecalho {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(17, 24, 39, .97);
+            border-bottom: 2px solid var(--amarelo);
+        }
+
+        .cabecalho-conteudo {
+            min-height: 78px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: var(--azul);
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--amarelo);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 23px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        nav a:hover {
+            color: var(--amarelo);
+        }
+
+        /* BOTÕES */
+
+        .botao {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 23px;
+            border-radius: 7px;
+            background: var(--amarelo);
+            color: #111827;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 800;
+            transition: transform .2s, background .2s;
+        }
+
+        .botao:hover {
+            background: #ffd04a;
+            transform: translateY(-2px);
+        }
+
+        .botao-secundario {
+            background: transparent;
+            color: white;
+            border: 1px solid var(--azul);
+        }
+
+        .botao-secundario:hover {
+            background: #17374c;
+        }
+
+        /* APRESENTAÇÃO PRINCIPAL */
+
+        .hero {
+            padding: 75px 0;
+            background:
+                radial-gradient(ellipse at 80% 10%, #16405a 0%, transparent 48%),
+                var(--fundo);
+        }
+
+        .hero-grade {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            border: 1px solid var(--amarelo);
+            border-radius: 30px;
+            padding: 5px 13px;
+            margin-bottom: 18px;
+            color: var(--amarelo);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: .4px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 4.5vw, 57px);
+            line-height: 1.12;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            color: var(--azul);
+        }
+
+        .hero-texto > p {
+            max-width: 590px;
+            color: var(--texto-suave);
+            font-size: 17px;
+            margin-bottom: 26px;
+        }
+
+        .hero-botoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-foto {
+            position: relative;
+        }
+
+        .hero-foto img {
+            display: block;
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border: 1px solid #526173;
+            border-radius: 14px;
+        }
+
+        .legenda-foto {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            left: 12px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: rgba(17, 24, 39, .91);
+            color: white;
+            font-size: 13px;
+        }
+
+        .legenda-foto strong {
+            display: block;
+            color: var(--amarelo);
+            font-size: 15px;
+        }
+
+        /* SEÇÕES */
+
+        .bloco {
+            padding: 76px 0;
+        }
+
+        .bloco-alternado {
+            background: #182232;
+        }
+
+        .titulo-secao {
+            max-width: 760px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .titulo-secao .mini-titulo {
+            color: var(--azul);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .titulo-secao h2 {
+            color: var(--amarelo);
+            font-size: clamp(28px, 4vw, 39px);
+            line-height: 1.2;
+            margin: 8px 0 14px;
+        }
+
+        .titulo-secao p {
+            color: var(--texto-suave);
+        }
+
+        /* GALERIA DAS NOVE FOTOS ORIGINAIS */
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .card-foto {
+            overflow: hidden;
+            background: var(--painel);
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            transition: transform .25s, border-color .25s;
+        }
+
+        .card-foto:hover {
+            transform: translateY(-4px);
+            border-color: var(--amarelo);
+        }
+
+        .card-foto img {
+            display: block;
+            width: 100%;
+            height: 245px;
+            object-fit: cover;
+            background: #273449;
+        }
+
+        .card-foto-conteudo {
+            padding: 18px;
+        }
+
+        .card-foto h3 {
+            color: var(--amarelo);
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .card-foto p {
+            color: var(--texto-suave);
+            font-size: 14px;
+        }
+
+        /* SERVIÇOS */
+
+        .servicos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .servico {
+            padding: 28px 24px;
+            background: var(--painel);
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            transition: transform .2s, border-color .2s;
+        }
+
+        .servico:hover {
+            transform: translateY(-4px);
+            border-color: var(--azul);
+        }
+
+        .servico-numero {
+            color: var(--azul);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .servico h3 {
+            color: var(--amarelo);
+            margin: 10px 0;
+            font-size: 21px;
+        }
+
+        .servico p {
+            color: var(--texto-suave);
+            font-size: 15px;
+        }
+
+        /* DIFERENCIAIS */
+
+        .diferenciais {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .diferencial {
+            padding: 22px;
+            background: var(--fundo);
+            border-left: 3px solid var(--azul);
+            border-radius: 6px;
+        }
+
+        .diferencial h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .diferencial p {
+            color: var(--texto-suave);
+            font-size: 14px;
+        }
+
+        /* CONTATO */
+
+        .contato {
+            padding: 78px 0;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at center, #19374c 0%, transparent 75%),
+                var(--fundo);
+        }
+
+        .contato-conteudo {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .contato h2 {
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            color: var(--amarelo);
+            margin-bottom: 16px;
+        }
+
+        .contato p {
+            color: var(--texto-suave);
+            margin-bottom: 25px;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            background: #0b1120;
+            border-top: 1px solid var(--borda);
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: var(--azul);
+            font-size: 17px;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        /* WHATSAPP FIXO */
+
+        .whatsapp-flutuante {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 200;
+            padding: 13px 18px;
+            background: #25d366;
+            color: #082b16;
+            border-radius: 30px;
+            box-shadow: 0 4px 18px #0006;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .whatsapp-flutuante:hover {
+            background: #54e58a;
+        }
+
+        /* CELULAR E TABLET */
+
+        @media (max-width: 900px) {
+            .hero-grade {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero-texto {
+                text-align: center;
+            }
+
+            .hero-texto > p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-botoes {
+                justify-content: center;
+            }
+
+            .hero-foto {
+                max-width: 700px;
+                width: 100%;
+                margin: auto;
+            }
+
+            .hero-foto img {
+                height: 370px;
+            }
+
+            .galeria,
+            .servicos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cabecalho-conteudo {
+                padding: 13px 0;
+                flex-direction: column;
+                gap: 9px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px 17px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 48px 0;
+            }
+
+            .hero-foto img {
+                height: 280px;
+            }
+
+            .hero-botoes {
+                flex-direction: column;
+            }
+
+            .botao {
+                width: 100%;
+            }
+
+            .bloco,
+            .contato {
+                padding: 52px 0;
+            }
+
+            .galeria,
+            .servicos,
+            .diferenciais {
+                grid-template-columns: 1fr;
+            }
+
+            .card-foto img {
+                height: 235px;
+            }
+
+            .whatsapp-flutuante {
+                right: 12px;
+                bottom: 12px;
+                padding: 11px 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+        <a class="logo" href="#inicio">
+            BrasaTec <span>Construção</span>
+        </a>
+
+        <nav aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#galeria">Nossas obras</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#diferenciais">Diferenciais</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- APRESENTAÇÃO PRINCIPAL COM FOTO ORIGINAL -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grade">
+
+            <div class="hero-texto">
+                <span class="etiqueta">INDAIATUBA E REGIÃO</span>
+
+                <h1>
+                    Sua obra do início ao
+                    <span>acabamento.</span>
+                </h1>
+
+                <p>
+                    Construção residencial, reformas e acabamentos.
+                    A BrasaTec ajuda você a tirar seu projeto do papel,
+                    com alinhamento das etapas, dos serviços e das
+                    responsabilidades de cada obra.
+                </p>
+
+                <div class="hero-botoes">
+                    <a
+                        class="botao"
+                        href="https://wa.me/5519978175158?text=Ol%C3%A1!%20Conheci%20a%20BrasaTec%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Solicitar orçamento
+                    </a>
+
+                    <a class="botao botao-secundario" href="#galeria">
+                        Conhecer nossas obras
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-foto">
+                <img
+                    src="imagens oobra/obra 1.jpg"
+                    alt="Obra original realizada pela BrasaTec Construção"
+                    fetchpriority="high"
+                >
+
+                <div class="legenda-foto">
+                    <strong>Obras da BrasaTec</strong>
+                    Registros reais dos nossos trabalhos.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERIA: NOVE FOTOS ORIGINAIS -->
+    <section class="bloco bloco-alternado" id="galeria">
+        <div class="container">
+
+            <div class="titulo-secao">
+                <span class="mini-titulo">NOSSO TRABALHO</span>
+                <h2>Galeria de obras da BrasaTec</h2>
+                <p>
+                    Confira os registros fotográficos das nossas obras.
+                </p>
+            </div>
+
+            <div class="galeria">
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 1.jpg"
+                         alt="Foto original da obra 1 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 1</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 2.jpeg"
+                         alt="Foto original da obra 2 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 2</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 3.jpeg"
+                         alt="Foto original da obra 3 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 3</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 4.jpeg"
+                         alt="Foto original da obra 4 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 4</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 5.jpeg"
+                         alt="Foto original da obra 5 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 5</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 6.jpeg"
+                         alt="Foto original da obra 6 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 6</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 7.jpeg"
+                         alt="Foto original da obra 7 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 7</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 8.jpeg"
+                         alt="Foto original da obra 8 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 8</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+                <article class="card-foto">
+                    <img src="imagens oobra/obra 9.jpeg"
+                         alt="Foto original da obra 9 da BrasaTec"
+                         loading="lazy">
+                    <div class="card-foto-conteudo">
+                        <h3>Obra 9</h3>
+                        <p>Registro original de uma obra da BrasaTec.</p>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="bloco" id="servicos">
+        <div class="container">
+
+            <div class="titulo-secao">
+                <span class="mini-titulo">O QUE FAZEMOS</span>
+                <h2>Serviços da BrasaTec</h2>
+                <p>
+                    Atendimento para diferentes necessidades
+                    da construção residencial.
+                </p>
+            </div>
+
+            <div class="servicos">
+
+                <article class="servico">
+                    <span class="servico-numero">01 — CONSTRUÇÃO</span>
+                    <h3>Construção do zero</h3>
+                    <p>
+                        Execução das etapas de construção residencial,
+                        conforme o escopo, o planejamento e o orçamento
+                        acordados para cada obra.
+                    </p>
+                </article>
+
+                <article class="servico">
+                    <span class="servico-numero">02 — REFORMAS</span>
+                    <h3>Reformas e ampliações</h3>
+                    <p>
+                        Serviços para renovar, adequar ou ampliar
+                        ambientes de acordo com as necessidades
+                        do imóvel e do cliente.
+                    </p>
+                </article>
+
+                <article class="servico">
+                    <span class="servico-numero">03 — ACABAMENTO</span>
+                    <h3>Acabamentos</h3>
+                    <p>
+                        Execução de serviços de acabamento conforme
+                        as características do projeto e as etapas
+                        contratadas.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="bloco bloco-alternado" id="diferenciais">
+        <div class="container">
+
+            <div class="titulo-secao">
+                <span class="mini-titulo">NOSSO COMPROMISSO</span>
+                <h2>Organização em cada etapa</h2>
+                <p>
+                    Alinhamento claro para o cliente saber
+                    o que está sendo contratado.
+                </p>
+            </div>
+
+            <div class="diferenciais">
+
+                <article class="diferencial">
+                    <h3>Orçamento alinhado</h3>
+                    <p>
+                        Entendimento inicial do serviço e das
+                        necessidades da obra.
+                    </p>
+                </article>
+
+                <article class="diferencial">
+                    <h3>Escopo definido</h3>
+                    <p>
+                        Alinhamento das etapas, dos materiais e das
+                        responsabilidades antes do início.
+                    </p>
+                </article>
+
+                <article class="diferencial">
+                    <h3>Atendimento regional</h3>
+                    <p>
+                        Atendimento em Indaiatuba e região,
+                        conforme a disponibilidade.
+                    </p>
+                </article>
+
+                <article class="diferencial">
+                    <h3>Contato direto</h3>
+                    <p>
+                        Converse com a BrasaTec para explicar
+                        seu projeto e solicitar um orçamento.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+        <div class="container contato-conteudo">
+
+            <span class="etiqueta">VAMOS CONVERSAR?</span>
+
+            <h2>Sua próxima obra começa com uma conversa.</h2>
+
+            <p>
+                Conte para a BrasaTec o que você precisa construir,
+                reformar ou finalizar. Entre em contato para consultar
+                a disponibilidade e solicitar seu orçamento.
+            </p>
+
+            <a
+                class="botao"
+                href="https://wa.me/5519978175158?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20BrasaTec%20Constru%C3%A7%C3%A3o."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Solicitar orçamento pelo WhatsApp
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p><strong>BrasaTec Construção</strong></p>
+        <p>Construção do zero, reformas e acabamentos.</p>
+        <p>Indaiatuba - SP e região.</p>
+        <p>
+            &copy; <span id="ano">2026</span>
+            BrasaTec Construção. Todos os direitos reservados.
+        </p>
+    </div>
+</footer>
+
+<a
+    class="whatsapp-flutuante"
+    href="https://wa.me/5519978175158?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20BrasaTec."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar com a BrasaTec pelo WhatsApp"
+>
+    WhatsApp
+</a>
+
+<script>
+    document.getElementById("ano").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
+```
